@@ -15,7 +15,6 @@ namespace Cryptor
 
         for (size_t i = 0; i < key_length; i++) {
             buff << rand_int_generator(mt);
-            std::cout << "i = " << i + 1 << "\t" << buff.str() << "\n";
         }
 
         return std::stoul(buff.str());
