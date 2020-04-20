@@ -49,7 +49,6 @@ namespace Cryptor
             std::cout << Colors::c_blue << "[=>] " << Colors::c_none << "Enter decrypt key > ";
             std::cin >> decrypt_key;
             std::cout << Colors::c_blue << "[=>] " << Colors::c_none << "Enter salt key > ";
-            std::cin.ignore();
             std::cin >> salt;
 
             file_encryptor_decryptor.set_file_name(opts_map["file"].as<std::string>());
