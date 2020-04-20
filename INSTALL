@@ -1,6 +1,6 @@
 # This is instruction of manualy installing
 
-1) Install of the dependencies:
+1) Installing of the dependencies:
     * Arch-based linux:
         $ sudo pacman -S gcc make boost
 
