@@ -21,4 +21,3 @@ $(TARGET): $(OBJECTS)
 
 clean:
 	rm -rf *.o src/*.o
-	rm -rf $(TARGET)
