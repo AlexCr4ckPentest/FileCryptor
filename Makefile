@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c -Wall -O3
+CFLAGS=-c -Wall -O3 -std=c++17
 LIBFLAGS=-lboost_program_options
 
 TARGET=fcryptor
