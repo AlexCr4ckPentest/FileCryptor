@@ -25,6 +25,15 @@ namespace Cryptor
                                                                 }), "set the key length")
             ("file,f", boost::program_options::value<std::string>(), "set the target file")
         ;
+
+        try {
+            boost::program_options::store(boost::program_options::parse_command_line(m_argc, m_argv, opt_desc), opts_map);
+            boost::program_options::notify(opts_map);
+        }
+        catch (boost::program_options::invalid_command_line_syntax &err) {
+            std::cerr << Colors::c_red << "[-] " << Colors::c_none << err.what() << std::endl;
+            exit(1);
+        }
     }
 
     Shell::~Shell()
@@ -32,18 +41,11 @@ namespace Cryptor
 
     int Shell::run()
     {
-        try {
-            boost::program_options::store(boost::program_options::parse_command_line(m_argc, m_argv, opt_desc), opts_map);
-            boost::program_options::notify(opts_map);
-        }
-        catch (boost::program_options::invalid_command_line_syntax &err) {
-            std::cerr << Colors::c_red << "[-] " << Colors::c_none << err.what() << std::endl;
-            return 1;
-        }
+        int ret_code {0};
 
         if (opts_map.count("help") || opts_map.size() < 2) {
-            std::cout << opt_desc << std::endl;
-            return 0;
+            std::cout << opt_desc << "\n";
+            return ret_code;
         }
 
         if (opts_map.count("key-length")) {
@@ -51,11 +53,10 @@ namespace Cryptor
         }
 
         if (opts_map.count("encrypt")) {
-            uint64_t encrypt_key = RandomKeyGen::generate_code(key_length);
-            uint32_t salt = RandomKeyGen::generate_code(salt_length);
+            uint64_t encrypt_key {RandomKeyGen::generate_code(key_length)};
+            uint32_t salt {static_cast<uint32_t>(RandomKeyGen::generate_code(salt_length))};
 
-            file_encryptor_decryptor.set_file_name(opts_map["file"].as<std::string>());
-            file_encryptor_decryptor.encrypt_file(encrypt_key, salt);
+            ret_code = file_encryptor_decryptor.encrypt_file(opts_map["file"].as<std::string>(), encrypt_key, salt);
         }
         else if (opts_map.count("decrypt")) {
             uint64_t decrypt_key;
@@ -65,9 +66,9 @@ namespace Cryptor
             std::cout << Colors::c_blue << "[=>] " << Colors::c_none << "Enter salt key > ";
             std::cin >> salt;
 
-            file_encryptor_decryptor.set_file_name(opts_map["file"].as<std::string>());
-            file_encryptor_decryptor.decrypt_file(decrypt_key, salt);
+            ret_code = file_encryptor_decryptor.decrypt_file(opts_map["file"].as<std::string>(), decrypt_key, salt);
         }
-        return 0;
+
+        return ret_code;
     }
 } // namespace Cryptor
