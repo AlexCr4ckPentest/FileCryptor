@@ -3,3 +3,5 @@
 The simple file encryptor and decryptor
 
 based on logical XOR operation
+
+![GitHub Logo](.img/logo.png)
