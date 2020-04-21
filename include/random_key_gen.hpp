@@ -12,6 +12,6 @@ namespace Cryptor
         static std::uniform_int_distribution<> rand_int_generator;
 
     public:
-        static uint64_t generate_code(const size_t key_length = 8);
+        static uint64_t generate_code(const size_t key_length);
     };
 } // namesapce Cryptor
