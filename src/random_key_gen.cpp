@@ -12,11 +12,8 @@ namespace Cryptor
     uint64_t RandomKeyGen::generate_code(const size_t key_length)
     {
         std::stringstream buff;
-
-        for (size_t i = 0; i < key_length; i++) {
+        for (size_t i = 0; i < key_length; i++)
             buff << rand_int_generator(mt);
-        }
-
         return std::stoul(buff.str());
     }
 }
