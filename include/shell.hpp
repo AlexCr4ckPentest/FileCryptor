@@ -16,8 +16,8 @@ namespace Cryptor
     class Shell
     {
     private:
+        uint8_t key_length;
         char **m_argv; int m_argc;
-        static uint8_t key_length;
         po::options_description opt_desc;
         po::variables_map opts_map;
         FileEncryptorDecryptor file_encryptor_decryptor;
