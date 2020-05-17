@@ -12,6 +12,7 @@
 
 namespace Cryptor
 {
+    namespace po = boost::program_options;
     class Shell
     {
     private:
