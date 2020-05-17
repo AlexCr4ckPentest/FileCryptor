@@ -15,14 +15,14 @@ namespace Cryptor
     class Shell
     {
     private:
-        int m_argc; char **m_argv;
+        char **m_argv; int m_argc;
+        po::options_description opt_desc;
+        po::variables_map opts_map;
         FileEncryptorDecryptor file_encryptor_decryptor;
-
-        boost::program_options::options_description opt_desc;
-        boost::program_options::variables_map opts_map;
     public:
-        Shell(int argc, char **argv);
-        ~Shell();
-        int run();
+        Shell(int argc, char **argv) noexcept;
+        Shell(const Shell&) = delete;
+        ~Shell() noexcept;
+        int run() noexcept;
     };
 } // namesapce Cryptor
