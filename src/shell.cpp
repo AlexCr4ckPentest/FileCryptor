@@ -2,6 +2,7 @@
 
 namespace Cryptor
 {
+    namespace po = boost::program_options;
     static constexpr size_t salt_length = 4;
     static size_t key_length;
 
@@ -14,25 +15,24 @@ namespace Cryptor
             ("help,h", "show help message")
             ("encrypt,e", "encrypt mode")
             ("decrypt,d", "decrypt mode")
-            ("key-length,l", boost::program_options::value<size_t>(&key_length)->default_value(4)
-                                                            ->notifier(
-                                                                [](size_t value)
-                                                                {
-                                                                    if (value > 16) {
-                                                                        std::cerr << Colors::c_red << "[-] " << Colors::c_none << "Key length is large!\n";
-                                                                        exit(1);
-                                                                    }
-                                                                }), "set the key length")
-            ("file,f", boost::program_options::value<std::string>(), "set the target file")
+            ("key-length,l", po::value<size_t>(&key_length)->default_value(4)
+                        ->notifier([](size_t value)
+                        {
+                            if (value > 16) {
+                                std::cerr << Colors::c_red << "[-] " << Colors::c_none << "Key length is large!\n";
+                                std::exit(1);
+                            }
+                        }), "set the key length")
+            ("file,f", po::value<std::string>(), "set the target file")
         ;
 
         try {
-            boost::program_options::store(boost::program_options::parse_command_line(m_argc, m_argv, opt_desc), opts_map);
-            boost::program_options::notify(opts_map);
+            po::store(po::parse_command_line(m_argc, m_argv, opt_desc), opts_map);
+            po::notify(opts_map);
         }
-        catch (boost::program_options::invalid_command_line_syntax &err) {
+        catch (po::error &err) {
             std::cerr << Colors::c_red << "[-] " << Colors::c_none << err.what() << std::endl;
-            exit(1);
+            std::exit(1);
         }
     }
 
@@ -42,14 +42,9 @@ namespace Cryptor
     int Shell::run()
     {
         int ret_code {0};
-
         if (opts_map.count("help") || opts_map.size() < 2) {
             std::cout << opt_desc << "\n";
             return ret_code;
-        }
-
-        if (opts_map.count("key-length")) {
-            key_length = opts_map["key-length"].as<size_t>();
         }
 
         if (opts_map.count("encrypt")) {
