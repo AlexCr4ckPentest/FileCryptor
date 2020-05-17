@@ -2,10 +2,7 @@
 
 namespace Cryptor
 {
-    namespace po = boost::program_options;
-
     constexpr static uint8_t salt_length = 4;
-    static uint8_t key_length;
 
     Shell::Shell(int argc, char **argv) noexcept
         : m_argc {argc}
