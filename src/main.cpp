@@ -106,7 +106,7 @@ int main(int argc, char** argv)
         json_file_writer.write(json_obj);
 
         std::cout << clr::green << "[+] " << clr::none << "Success: file has been encrypted: " << target_filename << "\n";
-        std::cout << clr::green << "[+] " << clr::none << "Success: keys saved in file: " << key_file_name << "\n";
+        std::cout << clr::green << "[+] " << clr::none << "Success: keys are saved in file: " << key_file_name << "\n";
     }
     else if (parsed_options.count("decrypt")) {
         auto target_filename {fs::absolute(parsed_options["decrypt"].as<std::string>()).string()};
