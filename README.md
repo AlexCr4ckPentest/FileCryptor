@@ -4,9 +4,9 @@ The simple file encryptor and decryptor
 
 based on logical XOR operation
 
-# Installation
+## Installation
 
-## Dependencies:
+### Dependencies:
 * Boost library
 
 1. mkdir build
@@ -17,12 +17,12 @@ based on logical XOR operation
 
 1. ./fcryptor -h # for show help
 
-# Examples
+## Examples
 
-**Encryption example**:
+1. **Encryption example**:
 
 ![Alt text](img/encryption_example.png)
 
-**Decryption example**:
+1. **Decryption example**:
 
 ![Alt text](img/decryption_example.png)
