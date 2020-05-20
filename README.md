@@ -8,13 +8,13 @@ based on logical XOR operation
 
 ## Dependencies: Boost
 
-1 $ mkdir build
+1. $ mkdir build
 
-1 $ cd build
+1. $ cd build
 
-1 $ cmake .. && make
+1. $ cmake .. && make
 
-1 $ ./fcryptor -h # for show help
+1. $ ./fcryptor -h # for show help
 
 # Examples
 
