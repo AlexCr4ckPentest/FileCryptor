@@ -4,17 +4,18 @@ The simple file encryptor and decryptor
 
 based on logical XOR operation
 
-# Installation:
+# Installation
 
-## Dependencies: Boost
+## Dependencies:
+1. Boost library
 
-1. $ mkdir build
+1. mkdir build
 
-1. $ cd build
+1. cd build
 
-1. $ cmake .. && make
+1. cmake .. && make
 
-1. $ ./fcryptor -h # for show help
+1. ./fcryptor -h # for show help
 
 # Examples
 
