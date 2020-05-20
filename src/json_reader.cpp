@@ -4,10 +4,8 @@
 
 namespace my
 {
-    /**
-     * Default constructor
-     * Do nothing
-    */
+    /// Default constructor
+    /// Do nothing
     JsonReader::JsonReader() noexcept
     {}
 
@@ -24,10 +22,8 @@ namespace my
 
 
 
-    /**
-     * Default destructor
-     * Do nothing
-    */
+    /// Default destructor
+    /// Do nothing
     JsonReader::~JsonReader() noexcept
     {}
 
@@ -47,8 +43,8 @@ namespace my
      * 
      * @return json object
      * 
-     * TODO:
-     * Open file stream for read, write data from stream to json object, close file stream and return json object
+     * @details Open file stream for read, write data from stream to json object,
+     *          close file stream and return json object
     */
     nlohmann::json JsonReader::read() noexcept
     {
