@@ -2,6 +2,8 @@
 
 namespace my
 {
+    /// Default constructor
+    /// Initialize random engine and random integer generator
     KeyGenerator::KeyGenerator() noexcept
         : rand_device {}
         , mt {rand_device()}
@@ -10,16 +12,18 @@ namespace my
 
 
 
+    /// Default destructor
+    /// Do nothing
     KeyGenerator::~KeyGenerator() noexcept
     {}
 
 
 
     /**
-     * @brief Generates two keys and returns them
+     * @brief Generate two keys and returns them
      * 
      * @param key_length  - Length of the base key
-     * @param salt_length - Length of the "salt" key (= 4 by default)
+     * @param salt_length - Length of the "salt" key (=4 by default)
      * 
      * @return std::pair<> of base key and "salt" key
     */
@@ -31,7 +35,7 @@ namespace my
 
 
     /**
-     * @brief Generates one key and returns them
+     * @brief Generate one key and returns them
      * 
      * @param key_length - Length of the key
      * 

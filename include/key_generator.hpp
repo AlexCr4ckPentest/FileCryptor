@@ -6,6 +6,11 @@
 
 namespace my
 {
+    /**
+     * @class KeyGenerator
+     * 
+     * @brief Simple class for generating random keys
+    */
     class KeyGenerator
     {
     public:

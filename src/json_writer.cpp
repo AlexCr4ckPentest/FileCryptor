@@ -4,10 +4,8 @@
 
 namespace my
 {
-    /**
-     * Default constructor
-     * Do nothing
-    */
+    /// Default constructor
+    /// Do nothing
     JsonWriter::JsonWriter() noexcept
     {}
 
@@ -24,10 +22,8 @@ namespace my
 
 
 
-    /**
-     * Default destructor
-     * Do nothing
-    */
+    /// Default destructor
+    /// Do nothing
     JsonWriter::~JsonWriter() noexcept
     {} 
 
@@ -48,8 +44,7 @@ namespace my
      * 
      * @param json_format_text - json object to write
      * 
-     * TODO:
-     * Open file stream for write, write json object to stream, close file stream
+     * @details Open file stream for write, write json object to stream, close file stream
     */
     void JsonWriter::write(const nlohmann::json& json_format_text) noexcept
     {

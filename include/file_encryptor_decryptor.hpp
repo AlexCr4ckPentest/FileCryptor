@@ -11,7 +11,7 @@ namespace my
     /**
      * @class FileEncryptorDecryptor
      * 
-     * @brief Encrypt or decrypt file
+     * @brief Simple file encryptor and decryptor class
     */
     class FileEncryptorDecryptor
     {

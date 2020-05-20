@@ -137,9 +137,7 @@ int main(int argc, char** argv)
     return 0;
 }
 
-/** TODO:
- * Create the key-file and write json template
-*/
+/// Create the key-file and write json template
 void create_key_file_and_write_json(my::JsonWriter& j_writer) noexcept
 {
     j_writer.write(R"(
