@@ -19,10 +19,10 @@ based on logical XOR operation
 
 ## Examples
 
-1. **Encryption example**:
+**Encryption example**:
 
 ![Alt text](img/encryption_example.png)
 
-1. **Decryption example**:
+**Decryption example**:
 
 ![Alt text](img/decryption_example.png)
