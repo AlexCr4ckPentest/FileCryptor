@@ -7,7 +7,7 @@ based on logical XOR operation
 # Installation
 
 ## Dependencies:
-1. Boost library
+* Boost library
 
 1. mkdir build
 
