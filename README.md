@@ -4,7 +4,7 @@ The simple file encryptor and decryptor
 
 based on logical XOR operation
 
-## Dependencies:
+## Dependencies
 * Boost library
 
 ## Installation
