@@ -4,10 +4,10 @@ The simple file encryptor and decryptor
 
 based on logical XOR operation
 
-## Installation
-
-### Dependencies:
+## Dependencies:
 * Boost library
+
+## Installation
 
 1. mkdir build
 
