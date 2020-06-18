@@ -16,9 +16,12 @@ namespace po = boost::program_options;
 namespace fs = boost::filesystem;
 namespace clr = my::colors;
 
-#define DEFAULT_KEY_LENGTH      4   // Default base key length
-#define KEY_LENGTH_MIN          2   // Min base key length
-#define KEY_LENGTH_MAX          16  // Max base key length
+enum
+{
+    DEFAULT_KEY_LENGTH  = 4,    // Default base key length
+    KEY_LENGTH_MIN      = 2,    // Min base key length
+    KEY_LENGTH_MAX      = 16    // Max base key length
+};
 
 inline void create_key_file_and_write_json(my::JsonWriter& j_writer) noexcept;
 
