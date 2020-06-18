@@ -16,10 +16,7 @@ based on logical XOR operation
 1. Run `./fcryptor -h` for show help
 
 ## Examples
-**Encryption example**:
-
+### Encryption example
 ![Alt text](img/encryption_example.png)
-
-**Decryption example**:
-
+### Decryption example
 ![Alt text](img/decryption_example.png)
