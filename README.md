@@ -5,9 +5,9 @@ The simple file encryptor and decryptor
 based on logical XOR operation
 
 ## Dependencies
-* cmake
-* C++ complier (gcc or clang)
-* Boost library
+* CMake (>= 3.1)
+* C++ complier (with C++17 support)
+* Boost library (>= 1.67)
 
 ## Installation
 1. `mkdir build`
