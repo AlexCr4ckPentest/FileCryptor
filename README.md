@@ -13,7 +13,7 @@ based on logical XOR operation
 1. `mkdir build`
 1. `cd build`
 1. `cmake .. && make`
-1. Run `./fcryptor -h ` for show help
+1. Run `./fcryptor -h` for show help
 
 ## Examples
 **Encryption example**:
