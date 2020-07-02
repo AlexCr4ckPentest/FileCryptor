@@ -1,6 +1,6 @@
 # FileCryptor
 
-The simple file encryptor and decryptor
+The simple file encryptor and decryptor program
 
 based on logical XOR operation
 
