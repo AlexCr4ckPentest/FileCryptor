@@ -9,11 +9,12 @@ based on logical XOR operation
 * C++ complier (with C++17 support)
 * Boost library (>= 1.67)
 
-## Installation
+## Building
 1. `mkdir build`
 1. `cd build`
 1. `cmake .. && make`
-1. Run `./fcryptor -h` for show help
+
+* Run `./fcryptor -h` for show help
 
 ## Examples
 ### Encryption example
