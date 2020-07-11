@@ -2,7 +2,7 @@
 
 #include <cassert>
 
-namespace my
+namespace alex
 {
     /// Default constructor
     /// Do nothing
@@ -56,4 +56,4 @@ namespace my
 
         m_out_file_stream.close();
     }
-} // namespace my
+} // namespace alex
