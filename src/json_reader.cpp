@@ -2,7 +2,7 @@
 
 #include <cassert>
 
-namespace my
+namespace alex
 {
     /// Default constructor
     /// Do nothing
@@ -60,4 +60,4 @@ namespace my
 
         return json_obj;
     }
-} // namespace my
+} // namespace alex
