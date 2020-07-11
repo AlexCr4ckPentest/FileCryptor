@@ -4,7 +4,7 @@
 #ifndef _KEY_GENERATOR_HPP_
 #define _KEY_GENERATOR_HPP_
 
-namespace my
+namespace alex
 {
     /**
      * @class KeyGenerator
@@ -29,6 +29,6 @@ namespace my
 
         uint64_t generate_key(const uint16_t key_length) noexcept;
     };
-} // namespace my
+} // namespace alex
 
 #endif // _KEY_GENERATOR_HPP_
