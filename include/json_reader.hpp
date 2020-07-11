@@ -5,7 +5,7 @@
 #ifndef _JSON_READER_HPP_
 #define _JSON_READER_HPP_
 
-namespace my
+namespace alex
 {
     /**
      * @class JsonReader
@@ -27,6 +27,6 @@ namespace my
         std::string m_filename;
         std::ifstream m_in_file_stream;
     };
-} // namespace my
+} // namespace alex
 
 #endif // _JSON_READER_HPP_
