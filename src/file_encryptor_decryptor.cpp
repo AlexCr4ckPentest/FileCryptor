@@ -2,7 +2,7 @@
 
 #include <iostream> // std::cerr
 
-namespace my
+namespace alex
 {
     /// Default constructor
     /// Do nothing
@@ -120,4 +120,4 @@ namespace my
             exit(1);
         }
     }
-} // namespace my
+} // namespace alex
