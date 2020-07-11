@@ -7,7 +7,7 @@
 #ifndef _JSON_WRITER_HPP_
 #define _JSON_WRITER_HPP_
 
-namespace my
+namespace alex
 {
     /**
      * @class JsonWriter
@@ -29,6 +29,6 @@ namespace my
         std::string m_filename;
         std::ofstream m_out_file_stream;
     };
-} // namespace my
+} // namespace alex
 
 #endif // _JSON_WRITER_HPP_
