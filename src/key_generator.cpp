@@ -1,6 +1,6 @@
 #include "../include/key_generator.hpp"
 
-namespace my
+namespace alex
 {
     /// Default constructor
     /// Initialize random engine and random integer generator
@@ -51,4 +51,4 @@ namespace my
 
         return std::stoul(buffer.str()); // Converting std::string to unsigned long
     }
-} // namespace my
+} // namespace alex
