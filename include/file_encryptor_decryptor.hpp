@@ -6,7 +6,7 @@
 #ifndef _FILE_ENCRYPTOR_DECRYPTOR_HPP_
 #define _FILE_ENCRYPTOR_DECRYPTOR_HPP_
 
-namespace my
+namespace alex
 {
     /**
      * @class FileEncryptorDecryptor
@@ -30,6 +30,6 @@ namespace my
         std::string m_target_file_name;
         std::fstream m_in_out_file_stream;
     }; 
-} // namespace my
+} // namespace alex
 
 #endif // _FILE_ENCRYPTOR_DECRYPTOR_HPP_
