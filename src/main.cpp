@@ -14,7 +14,7 @@
 
 namespace po = boost::program_options;
 namespace fs = boost::filesystem;
-namespace clr = my::colors;
+namespace clr = alex::colors;
 
 enum
 {
@@ -30,10 +30,10 @@ int main(int argc, char** argv)
     uint16_t key_length;
     std::string key_file_name;
 
-    my::KeyGenerator key_pair_generator;
-    my::JsonReader json_file_reader;
-    my::JsonWriter json_file_writer;
-    my::FileEncryptorDecryptor file_encryptor_decryptor;
+    alex::KeyGenerator key_pair_generator;
+    alex::JsonReader json_file_reader;
+    alex::JsonWriter json_file_writer;
+    alex::FileEncryptorDecryptor file_encryptor_decryptor;
 
     po::variables_map parsed_options;
     po::options_description available_options("Available options");
