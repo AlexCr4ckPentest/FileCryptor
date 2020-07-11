@@ -1,7 +1,7 @@
 #ifndef _COLORS_HPP_
 #define _COLORS_HPP_
 
-namespace my::colors
+namespace alex::colors
 {
     inline constexpr const char* red      = "\033[1;31m";
     inline constexpr const char* green    = "\033[1;32m";
@@ -10,6 +10,6 @@ namespace my::colors
     inline constexpr const char* cyan     = "\033[1;36m";
     inline constexpr const char* white    = "\033[1;37m";
     inline constexpr const char* none     = "\033[0m";
-} // namespace my::colors
+} // namespace alex::colors
 
 #endif // _COLORS_HPP_
