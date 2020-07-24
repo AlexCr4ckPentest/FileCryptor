@@ -56,11 +56,14 @@ int main(int argc, char** argv)
         return 1;
     }
 
+    // Show help message (option --help called or not enough arguments)
     if (parsed_options.size() < 2 || parsed_options.count("help")) {
         std::cout << available_options;
         return 0;
     }
-    else if (key_length < KEY_LENGTH_MIN || key_length > KEY_LENGTH_MAX) {
+    
+    // Check key length
+    if (key_length < KEY_LENGTH_MIN || key_length > KEY_LENGTH_MAX) {
         std::cout << clr::red << "[-] " << clr::none << "Error: key length is short or long!\n";
         return 1;
     }
@@ -76,7 +79,7 @@ int main(int argc, char** argv)
     json_file_reader.set_filename(key_file_name);
 
     if (!fs::exists(key_file_name)) {
-        create_key_file_and_write_json(json_file_writer);
+        create_key_file_and_write_json_template(json_file_writer);
     }
 
     auto json_obj = json_file_reader.read();
