@@ -23,7 +23,7 @@ enum
     KEY_LENGTH_MAX      = 16    // Max base key length
 };
 
-inline void create_key_file_and_write_json(my::JsonWriter& j_writer) noexcept;
+inline void create_key_file_and_write_json_template(alex::JsonWriter& j_writer) noexcept;
 
 int main(int argc, char** argv)
 {
@@ -141,7 +141,7 @@ int main(int argc, char** argv)
 }
 
 /// Create the key-file and write json template
-inline void create_key_file_and_write_json(my::JsonWriter& j_writer) noexcept
+inline void create_key_file_and_write_json_template(alex::JsonWriter& j_writer) noexcept
 {
     j_writer.write(R"(
         {
