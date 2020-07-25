@@ -19,12 +19,17 @@ namespace alex
     public:
         JsonWriter() noexcept;
         JsonWriter(const std::string& filename) noexcept;
+
         JsonWriter(const JsonWriter&) = delete;
         JsonWriter& operator=(const JsonWriter&) = delete;
+
         ~JsonWriter() noexcept;
 
-        void set_filename(const std::string& new_filename) noexcept;
+        inline void set_filename(const std::string& new_filename) noexcept
+        { m_filename = new_filename; }
+
         void write(const nlohmann::json& json_format_text) noexcept;
+
     private:
         std::string m_filename;
         std::ofstream m_out_file_stream;
