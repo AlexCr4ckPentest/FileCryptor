@@ -26,7 +26,7 @@ namespace alex
      * 
      * @return generated key
     */
-    uint64_t KeyGenerator::generate_key(const uint16_t key_length) noexcept
+    uint64_t KeyGenerator::generate_one_key(const uint16_t key_length) noexcept
     {
         buffer.str(""); // Clear buffer
 
