@@ -30,16 +30,6 @@ namespace alex
 
 
     /**
-     * @brief Set name of the target file which will be encrypted or decrypted
-     * 
-     * @param new_target_filename - name of the target file
-    */
-    void FileEncryptorDecryptor::set_target_filename(const std::string& new_target_filename) noexcept
-    { m_target_file_name = new_target_filename; }
-
-
-
-    /**
      * @brief Encrypt the target file using base and 'salt' keys
      * 
      * @param base_key - Base encryption key
