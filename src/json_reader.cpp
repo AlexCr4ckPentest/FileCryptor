@@ -30,15 +30,6 @@ namespace alex
 
 
     /**
-     * @brief Set name of the file to read
-     * 
-     * @param new_filename - name of the file to read
-    */
-    void JsonReader::set_filename(const std::string& new_filename) noexcept
-    { m_filename = new_filename; }
-
-
-    /**
      * @brief Read json data from file
      * 
      * @return json object
@@ -56,7 +47,7 @@ namespace alex
         m_in_file_stream >> json_obj;
         m_in_file_stream.close();
 
-        assert(!json_obj.is_null());
+        assert(!json_obj.is_null() && "No json data!");
 
         return json_obj;
     }
