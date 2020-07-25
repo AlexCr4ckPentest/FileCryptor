@@ -22,7 +22,7 @@ namespace alex
         ~KeyGenerator() noexcept;
 
         inline std::pair<uint64_t, uint32_t> generate(const uint16_t key_length, const uint16_t salt_length = 4) noexcept
-        { return {generate_key(key_length), generate_key(salt_length)}; }
+        { return {generate_one_key(key_length), generate_one_key(salt_length)}; }
 
     private:
         std::random_device rand_device;
@@ -30,7 +30,7 @@ namespace alex
         std::uniform_int_distribution<> get_rand_int;
         std::stringstream buffer;
 
-        uint64_t generate_key(const uint16_t key_length) noexcept;
+        uint64_t generate_one_key(const uint16_t key_length) noexcept;
     };
 } // namespace alex
 
