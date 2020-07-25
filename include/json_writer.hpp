@@ -1,6 +1,6 @@
 #include <fstream>
 
-#include "nlohmann/json.hpp"
+#include "../lib/nlohmann/json.hpp"
 
 #include "colors.hpp"
 

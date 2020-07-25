@@ -1,6 +1,6 @@
 #include <fstream>
 
-#include "nlohmann/json.hpp"
+#include "../lib/nlohmann/json.hpp"
 
 #ifndef _JSON_READER_HPP_
 #define _JSON_READER_HPP_
