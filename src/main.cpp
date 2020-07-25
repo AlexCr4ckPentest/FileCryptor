@@ -13,8 +13,7 @@
 #include "../include/json_writer.hpp"
 
 namespace po = boost::program_options;
-namespace fs = boost::filesystem;
-namespace clr = alex::colors;
+namespace boost_fs = boost::filesystem;
 
 enum
 {
@@ -29,11 +28,6 @@ int main(int argc, char** argv)
 {
     uint16_t key_length;
     std::string key_file_name;
-
-    alex::KeyGenerator key_pair_generator;
-    alex::JsonReader json_file_reader;
-    alex::JsonWriter json_file_writer;
-    alex::FileEncryptorDecryptor file_encryptor_decryptor;
 
     po::variables_map parsed_options;
     po::options_description available_options("Available options");
@@ -52,7 +46,7 @@ int main(int argc, char** argv)
         po::notify(parsed_options);
     }
     catch (const po::error& err) {
-        std::cerr << clr::red << "[-] " << clr::none << "Error: " << err.what() << "\n";
+        std::cerr << alex::colors::red << "[-] " << alex::colors::none << "Error: " << err.what() << "\n";
         return 1;
     }
 
@@ -64,37 +58,43 @@ int main(int argc, char** argv)
     
     // Check key length
     if (key_length < KEY_LENGTH_MIN || key_length > KEY_LENGTH_MAX) {
-        std::cout << clr::red << "[-] " << clr::none << "Error: key length is short or long!\n";
+        std::cout << alex::colors::red << "[-] " << alex::colors::none << "Error: key length is short or long!\n";
         return 1;
     }
-
+    
     if (parsed_options.count("out-key-file")) {
         key_file_name = parsed_options["out-key-file"].as<std::string>();
     }
     else if (parsed_options.count("in-key-file")) {
         key_file_name = parsed_options["in-key-file"].as<std::string>();
     }
+    
+    alex::JsonReader json_file_reader;
+    alex::JsonWriter json_file_writer;
 
     json_file_writer.set_filename(key_file_name);
     json_file_reader.set_filename(key_file_name);
 
-    if (!fs::exists(key_file_name)) {
+    if (!boost_fs::exists(key_file_name)) {
         create_key_file_and_write_json_template(json_file_writer);
     }
 
     auto json_obj = json_file_reader.read();
+    
+    alex::KeyGenerator key_pair_generator;
+    alex::FileEncryptorDecryptor file_encryptor_decryptor;
 
     if (parsed_options.count("encrypt")) {
-        auto target_filename {fs::absolute(parsed_options["encrypt"].as<std::string>()).string()};
+        auto target_filename {boost_fs::absolute(parsed_options["encrypt"].as<std::string>()).string()};
 
         if (!fs::exists(target_filename)) {
-            std::cerr << clr::red << "[-] " << clr::none << "Error: could not open file: " << target_filename << "\n";
+            std::cerr << alex::colors::red << "[-] " << alex::colors::none << "Error: could not open file: " << target_filename << "\n";
             return 1;
         }
 
         if (!json_obj["filename"].is_null()) {
             if (json_obj["filename"] != target_filename || json_obj["encrypted"]) {
-                std::cerr << clr::red << "[-] " << clr::none << "Error: different files encrypted or this file already encrypted!\n";
+                std::cerr << alex::colors::red << "[-] " << alex::colors::none << "Error: different files encrypted or this file already encrypted!\n";
                 return 1;
             }
         }
@@ -115,15 +115,15 @@ int main(int argc, char** argv)
         std::cout << clr::green << "[+] " << clr::none << "Success: keys are saved in file: " << key_file_name << "\n";
     }
     else if (parsed_options.count("decrypt")) {
-        auto target_filename {fs::absolute(parsed_options["decrypt"].as<std::string>()).string()};
+        auto target_filename {boost_fs::absolute(parsed_options["decrypt"].as<std::string>()).string()};
 
         if (!fs::exists(target_filename)) {
-            std::cerr << clr::red << "[-] " << clr::none << "Error: could not open file: " << target_filename << "\n";
+            std::cerr << alex::colors::red << "[-] " << alex::colors::none << "Error: could not open file: " << target_filename << "\n";
             return 1;
         }
 
         if (json_obj["filename"] != target_filename || (!json_obj["encrypted"])) {
-            std::cerr << clr::red << "[-] " << clr::none << "Error: different files encrypted or this file already decrypted!\n";
+            std::cerr << alex::colors::red << "[-] " << alex::colors::none << "Error: different files encrypted or this file already decrypted!\n";
             return 1;
         }
 
@@ -137,7 +137,7 @@ int main(int argc, char** argv)
 
         json_file_writer.write(json_obj);
 
-        std::cout << clr::green << "[+] " << clr::none << "Success: file has been decrypted: " << target_filename << "\n";
+        std::cout << alex::colors::green << "[+] " << alex::colors::none << "Success: file has been decrypted: " << target_filename << "\n";
     }
 
     return 0;
