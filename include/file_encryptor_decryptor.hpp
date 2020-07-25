@@ -18,14 +18,18 @@ namespace alex
     public:
         FileEncryptorDecryptor() noexcept;
         FileEncryptorDecryptor(const std::string& target_filename) noexcept;
+
         FileEncryptorDecryptor(const FileEncryptorDecryptor&) = delete;
         FileEncryptorDecryptor& operator=(const FileEncryptorDecryptor&) = delete;
+
         ~FileEncryptorDecryptor() noexcept;
 
-        void set_target_filename(const std::string& new_target_filename) noexcept;
+        inline void set_target_filename(const std::string& new_target_filename) noexcept
+        { m_target_file_name = new_target_filename; }
 
         void encrypt(const uint64_t base_key, const uint32_t salt_key) noexcept;
         void decrypt(const uint64_t base_key, const uint32_t salt_key) noexcept;
+
     private:
         std::string m_target_file_name;
         std::fstream m_in_out_file_stream;
