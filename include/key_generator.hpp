@@ -15,11 +15,14 @@ namespace alex
     {
     public:
         explicit KeyGenerator() noexcept;
+
         KeyGenerator(const KeyGenerator&) = delete;
         KeyGenerator& operator=(const KeyGenerator&) = delete;
+
         ~KeyGenerator() noexcept;
 
-        std::pair<uint64_t, uint32_t> generate(const uint16_t key_length, const uint16_t salt_length = 4) noexcept;
+        inline std::pair<uint64_t, uint32_t> generate(const uint16_t key_length, const uint16_t salt_length) noexcept
+        { return {generate_key(key_length), generate_key(salt_length)}; }
 
     private:
         std::random_device rand_device;
