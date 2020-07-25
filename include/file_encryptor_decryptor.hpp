@@ -11,7 +11,7 @@ namespace alex
     /**
      * @class FileEncryptorDecryptor
      * 
-     * @brief Simple file encryptor and decryptor class
+     * @brief Simple file encryptor and decryptor
     */
     class FileEncryptorDecryptor
     {
