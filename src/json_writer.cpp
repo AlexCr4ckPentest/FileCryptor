@@ -30,16 +30,6 @@ namespace alex
 
 
     /**
-     * @brief Set name of the file to write
-     * 
-     * @param new_filename - name of the file to write
-    */
-    void JsonWriter::set_filename(const std::string& new_filename) noexcept
-    { m_filename = new_filename; }
-
-
-
-    /**
      * @brief Write json data to file
      * 
      * @param json_format_text - json object to write
