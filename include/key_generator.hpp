@@ -21,7 +21,7 @@ namespace alex
 
         ~KeyGenerator() noexcept;
 
-        inline std::pair<uint64_t, uint32_t> generate(const uint16_t key_length, const uint16_t salt_length) noexcept
+        inline std::pair<uint64_t, uint32_t> generate(const uint16_t key_length, const uint16_t salt_length = 4) noexcept
         { return {generate_key(key_length), generate_key(salt_length)}; }
 
     private:
