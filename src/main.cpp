@@ -87,7 +87,7 @@ int main(int argc, char** argv)
     if (parsed_options.count("encrypt")) {
         auto target_filename {boost_fs::absolute(parsed_options["encrypt"].as<std::string>()).string()};
 
-        if (!fs::exists(target_filename)) {
+        if (!boost_fs::exists(target_filename)) {
             std::cerr << alex::colors::red << "[-] " << alex::colors::none << "Error: could not open file: " << target_filename << "\n";
             return 1;
         }
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
     else if (parsed_options.count("decrypt")) {
         auto target_filename {boost_fs::absolute(parsed_options["decrypt"].as<std::string>()).string()};
 
-        if (!fs::exists(target_filename)) {
+        if (!boost_fs::exists(target_filename)) {
             std::cerr << alex::colors::red << "[-] " << alex::colors::none << "Error: could not open file: " << target_filename << "\n";
             return 1;
         }
