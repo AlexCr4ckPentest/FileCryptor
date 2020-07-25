@@ -17,12 +17,17 @@ namespace alex
     public:
         JsonReader() noexcept;
         JsonReader(const std::string& filename) noexcept;
+
         JsonReader(const JsonReader&) = delete;
         JsonReader& operator=(const JsonReader&) = delete;
+
         ~JsonReader() noexcept;
 
-        void set_filename(const std::string& new_filename) noexcept;
+        inline void set_filename(const std::string& new_filename) noexcept
+        { m_filename = new_filename; }
+        
         nlohmann::json read() noexcept;
+
     private:
         std::string m_filename;
         std::ifstream m_in_file_stream;
