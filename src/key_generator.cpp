@@ -20,21 +20,6 @@ namespace alex
 
 
     /**
-     * @brief Generate two keys and returns them
-     * 
-     * @param key_length  - Length of the base key
-     * @param salt_length - Length of the "salt" key (=4 by default)
-     * 
-     * @return std::pair<> of base key and "salt" key
-    */
-    std::pair<uint64_t, uint32_t> KeyGenerator::generate(const uint16_t key_length, const uint16_t salt_length) noexcept
-    {
-        return {generate_key(key_length), generate_key(salt_length)};
-    }
-
-
-
-    /**
      * @brief Generate one key and returns them
      * 
      * @param key_length - Length of the key
