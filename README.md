@@ -4,6 +4,8 @@ The simple file encryptor and decryptor program
 
 based on logical XOR operation
 
+For Unix-like OS only
+
 ## Dependencies
 * CMake (>= 3.1)
 * C++ complier (with C++17 support)
