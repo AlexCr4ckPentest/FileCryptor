@@ -10,6 +10,7 @@ For Unix-like OS only
 * CMake (>= 3.1)
 * C++ complier (with C++17 support)
 * Boost.Filesystem library
+* Boost.Program_options library
 
 ## Building
 1. `mkdir build`
