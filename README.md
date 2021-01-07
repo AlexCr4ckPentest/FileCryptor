@@ -9,7 +9,7 @@ For Unix-like OS only
 ## Dependencies
 * CMake (>= 3.1)
 * C++ complier (with C++17 support)
-* Boost library (>= 1.67)
+* Boost.Filesystem library
 
 ## Building
 1. `mkdir build`
